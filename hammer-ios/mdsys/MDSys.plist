@@ -1,0 +1,26 @@
+{ Filter = { 
+    Executables = (
+      "apsd",
+      "akd",
+      "itunesstored",
+      "fairplayd.H2",
+      "cloudd",
+      "itunescloudd",
+      "absd",
+      "CloudKeychainProxy",
+      "bird",
+      "coreauthd",
+      "AppleIDAuthAgent",
+      "appstored",
+      "ubd",
+      "mstreamd",
+      "nesessionmanager",
+      "adid",
+      "nsurlsessiond",
+      "imagent",
+      "IMDPersistenceAgent",
+      "identityservicesd",
+      "IDSRemoteURLConnectionAgent",
+      "IMRemoteURLConnectionAgent",
+    );
+ }; }

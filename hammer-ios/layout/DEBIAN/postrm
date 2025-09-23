@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -fr /tmp/*.plist
+killall -9 configd

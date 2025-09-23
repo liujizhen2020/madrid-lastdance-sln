@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A02508628CB312F0011095C /* BinaryCert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A02508528CB312F0011095C /* BinaryCert.m */; };
+		7AD08A8928813E2C001220D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08A8828813E2C001220D5 /* AppDelegate.m */; };
+		7AD08A8B28813E2E001220D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD08A8A28813E2E001220D5 /* Assets.xcassets */; };
+		7AD08A8E28813E2E001220D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD08A8C28813E2E001220D5 /* MainMenu.xib */; };
+		7AD08A9128813E2E001220D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08A9028813E2E001220D5 /* main.m */; };
+		7AD08B0828815A9B001220D5 /* MadridExpress_Nigger in Copy black worker to app bundle */ = {isa = PBXBuildFile; fileRef = 7AD08AB228813EDB001220D5 /* MadridExpress_Nigger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7AD08B1228815C18001220D5 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B0C28815C18001220D5 /* GCDAsyncUdpSocket.m */; };
+		7AD08B1328815C18001220D5 /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B1028815C18001220D5 /* NSData+GZIP.m */; };
+		7AD08B1428815C18001220D5 /* NSData+FastHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B1128815C18001220D5 /* NSData+FastHex.m */; };
+		7AD08B2328815D23001220D5 /* SendResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B1A28815D23001220D5 /* SendResult.m */; };
+		7AD08B2528815D23001220D5 /* dec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B1D28815D23001220D5 /* dec.m */; };
+		7AD08B2628815D23001220D5 /* ServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B2128815D23001220D5 /* ServerAPI.m */; };
+		7AD08B3428815DC5001220D5 /* UIDefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B2D28815DC5001220D5 /* UIDefs.m */; };
+		7AD08B3528815DC5001220D5 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD08B3028815DC5001220D5 /* MainWindowController.xib */; };
+		7AD08B3628815DC5001220D5 /* StateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B3128815DC5001220D5 /* StateView.m */; };
+		7AD08B3728815DC5001220D5 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B3328815DC5001220D5 /* MainWindowController.m */; };
+		7AD08B5F28815EDB001220D5 /* mp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B4828815EDB001220D5 /* mp.m */; };
+		7AD08B6028815EDB001220D5 /* PeerIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B4928815EDB001220D5 /* PeerIDManager.m */; };
+		7AD08B6228815EDB001220D5 /* GameMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B4E28815EDB001220D5 /* GameMaster.m */; };
+		7AD08B6428815EDB001220D5 /* QueryResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B5528815EDB001220D5 /* QueryResultItem.m */; };
+		7AD08B6528815EDB001220D5 /* Emulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08B5628815EDB001220D5 /* Emulator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AD08AB128813EDB001220D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AD08AAD28813EDB001220D5 /* MadridExpress_Nigger.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7AD08AA228813ECB001220D5;
+			remoteInfo = MadridExpress_Nigger;
+		};
+		7AD08B0528815A7B001220D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AD08AAD28813EDB001220D5 /* MadridExpress_Nigger.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AD08AA128813ECB001220D5;
+			remoteInfo = MadridExpress_Nigger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AD08B0728815A81001220D5 /* Copy black worker to app bundle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				7AD08B0828815A9B001220D5 /* MadridExpress_Nigger in Copy black worker to app bundle */,
+			);
+			name = "Copy black worker to app bundle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7A02508428CB312F0011095C /* BinaryCert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryCert.h; sourceTree = "<group>"; };
+		7A02508528CB312F0011095C /* BinaryCert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryCert.m; sourceTree = "<group>"; };
+		7AD08A8428813E2C001220D5 /* fs.IMSender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fs.IMSender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD08A8728813E2C001220D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7AD08A8828813E2C001220D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7AD08A8A28813E2E001220D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AD08A8D28813E2E001220D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7AD08A8F28813E2E001220D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD08A9028813E2E001220D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AD08A9228813E2E001220D5 /* MadridExpressVM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MadridExpressVM.entitlements; sourceTree = "<group>"; };
+		7AD08AAD28813EDB001220D5 /* MadridExpress_Nigger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MadridExpress_Nigger.xcodeproj; path = MadridExpress_Nigger/MadridExpress_Nigger.xcodeproj; sourceTree = "<group>"; };
+		7AD08B0C28815C18001220D5 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		7AD08B0D28815C18001220D5 /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
+		7AD08B0E28815C18001220D5 /* NSData+FastHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FastHex.h"; sourceTree = "<group>"; };
+		7AD08B0F28815C18001220D5 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		7AD08B1028815C18001220D5 /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
+		7AD08B1128815C18001220D5 /* NSData+FastHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FastHex.m"; sourceTree = "<group>"; };
+		7AD08B1828815D23001220D5 /* dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec.h; sourceTree = "<group>"; };
+		7AD08B1928815D23001220D5 /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		7AD08B1A28815D23001220D5 /* SendResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendResult.m; sourceTree = "<group>"; };
+		7AD08B1C28815D23001220D5 /* ServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
+		7AD08B1D28815D23001220D5 /* dec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dec.m; sourceTree = "<group>"; };
+		7AD08B2028815D23001220D5 /* SendResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendResult.h; sourceTree = "<group>"; };
+		7AD08B2128815D23001220D5 /* ServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAPI.m; sourceTree = "<group>"; };
+		7AD08B2D28815DC5001220D5 /* UIDefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDefs.m; sourceTree = "<group>"; };
+		7AD08B2E28815DC5001220D5 /* StateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateView.h; sourceTree = "<group>"; };
+		7AD08B2F28815DC5001220D5 /* UIDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefs.h; sourceTree = "<group>"; };
+		7AD08B3028815DC5001220D5 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		7AD08B3128815DC5001220D5 /* StateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateView.m; sourceTree = "<group>"; };
+		7AD08B3228815DC5001220D5 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		7AD08B3328815DC5001220D5 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		7AD08B4028815EB9001220D5 /* emu_defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = emu_defs.h; sourceTree = "<group>"; };
+		7AD08B4428815EDB001220D5 /* GameMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMaster.h; sourceTree = "<group>"; };
+		7AD08B4828815EDB001220D5 /* mp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mp.m; sourceTree = "<group>"; };
+		7AD08B4928815EDB001220D5 /* PeerIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerIDManager.m; sourceTree = "<group>"; };
+		7AD08B4B28815EDB001220D5 /* QueryResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryResultItem.h; sourceTree = "<group>"; };
+		7AD08B4C28815EDB001220D5 /* Emulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emulator.h; sourceTree = "<group>"; };
+		7AD08B4E28815EDB001220D5 /* GameMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMaster.m; sourceTree = "<group>"; };
+		7AD08B5028815EDB001220D5 /* mp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp.h; sourceTree = "<group>"; };
+		7AD08B5428815EDB001220D5 /* PeerIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerIDManager.h; sourceTree = "<group>"; };
+		7AD08B5528815EDB001220D5 /* QueryResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryResultItem.m; sourceTree = "<group>"; };
+		7AD08B5628815EDB001220D5 /* Emulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emulator.m; sourceTree = "<group>"; };
+		7AD08B5828815EDB001220D5 /* NSData+FTServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FTServices.h"; sourceTree = "<group>"; };
+		7AD08B5928815EDB001220D5 /* NSData+IMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+IMFoundation.h"; sourceTree = "<group>"; };
+		7AD08B5A28815EDB001220D5 /* SecKeyPriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyPriv.h; sourceTree = "<group>"; };
+		7AD08B5B28815EDB001220D5 /* SecRSAKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecRSAKey.h; sourceTree = "<group>"; };
+		7AD08B6828816044001220D5 /* worker_defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = worker_defs.h; sourceTree = "<group>"; };
+		7AF1DF2A28852BC6009EF812 /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		7AF1DF2B28852BC6009EF812 /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AD08A8128813E2C001220D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AD08A7B28813E2C001220D5 = {
+			isa = PBXGroup;
+			children = (
+				7AD08B6828816044001220D5 /* worker_defs.h */,
+				7AD08AAD28813EDB001220D5 /* MadridExpress_Nigger.xcodeproj */,
+				7AD08B0B28815C18001220D5 /* Vendor */,
+				7AD08AF2288154CC001220D5 /* Sources */,
+				7AD08A8628813E2C001220D5 /* MadridExpressVM */,
+				7AD08A8528813E2C001220D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AD08A8528813E2C001220D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08A8428813E2C001220D5 /* fs.IMSender.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AD08A8628813E2C001220D5 /* MadridExpressVM */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08B4228815EDB001220D5 /* GameMaster */,
+				7AD08B1628815D23001220D5 /* ServerAPI */,
+				7AD08B3228815DC5001220D5 /* MainWindowController.h */,
+				7AD08B3328815DC5001220D5 /* MainWindowController.m */,
+				7AD08B3028815DC5001220D5 /* MainWindowController.xib */,
+				7AD08B2E28815DC5001220D5 /* StateView.h */,
+				7AD08B3128815DC5001220D5 /* StateView.m */,
+				7AD08B2F28815DC5001220D5 /* UIDefs.h */,
+				7AD08B2D28815DC5001220D5 /* UIDefs.m */,
+				7AD08A8728813E2C001220D5 /* AppDelegate.h */,
+				7AD08A8828813E2C001220D5 /* AppDelegate.m */,
+				7AD08B4028815EB9001220D5 /* emu_defs.h */,
+				7AD08A8A28813E2E001220D5 /* Assets.xcassets */,
+				7AD08A8C28813E2E001220D5 /* MainMenu.xib */,
+				7AD08A8F28813E2E001220D5 /* Info.plist */,
+				7AD08A9028813E2E001220D5 /* main.m */,
+				7AD08A9228813E2E001220D5 /* MadridExpressVM.entitlements */,
+			);
+			path = MadridExpressVM;
+			sourceTree = "<group>";
+		};
+		7AD08AAE28813EDB001220D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08AB228813EDB001220D5 /* MadridExpress_Nigger */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AD08AF2288154CC001220D5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7A02508428CB312F0011095C /* BinaryCert.h */,
+				7A02508528CB312F0011095C /* BinaryCert.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7AD08B0B28815C18001220D5 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08B0F28815C18001220D5 /* GCDAsyncUdpSocket.h */,
+				7AD08B0C28815C18001220D5 /* GCDAsyncUdpSocket.m */,
+				7AD08B0E28815C18001220D5 /* NSData+FastHex.h */,
+				7AD08B1128815C18001220D5 /* NSData+FastHex.m */,
+				7AD08B0D28815C18001220D5 /* NSData+GZIP.h */,
+				7AD08B1028815C18001220D5 /* NSData+GZIP.m */,
+				7AF1DF2A28852BC6009EF812 /* fishhook.h */,
+				7AF1DF2B28852BC6009EF812 /* fishhook.c */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		7AD08B1628815D23001220D5 /* ServerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08B1C28815D23001220D5 /* ServerAPI.h */,
+				7AD08B2128815D23001220D5 /* ServerAPI.m */,
+				7AD08B1828815D23001220D5 /* dec.h */,
+				7AD08B1D28815D23001220D5 /* dec.m */,
+				7AD08B1928815D23001220D5 /* defs.h */,
+				7AD08B2028815D23001220D5 /* SendResult.h */,
+				7AD08B1A28815D23001220D5 /* SendResult.m */,
+			);
+			path = ServerAPI;
+			sourceTree = "<group>";
+		};
+		7AD08B4228815EDB001220D5 /* GameMaster */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08B4428815EDB001220D5 /* GameMaster.h */,
+				7AD08B4E28815EDB001220D5 /* GameMaster.m */,
+				7AD08B4C28815EDB001220D5 /* Emulator.h */,
+				7AD08B5628815EDB001220D5 /* Emulator.m */,
+				7AD08B5428815EDB001220D5 /* PeerIDManager.h */,
+				7AD08B4928815EDB001220D5 /* PeerIDManager.m */,
+				7AD08B4B28815EDB001220D5 /* QueryResultItem.h */,
+				7AD08B5528815EDB001220D5 /* QueryResultItem.m */,
+				7AD08B5028815EDB001220D5 /* mp.h */,
+				7AD08B4828815EDB001220D5 /* mp.m */,
+				7AD08B5728815EDB001220D5 /* x */,
+			);
+			path = GameMaster;
+			sourceTree = "<group>";
+		};
+		7AD08B5728815EDB001220D5 /* x */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08B5828815EDB001220D5 /* NSData+FTServices.h */,
+				7AD08B5928815EDB001220D5 /* NSData+IMFoundation.h */,
+				7AD08B5A28815EDB001220D5 /* SecKeyPriv.h */,
+				7AD08B5B28815EDB001220D5 /* SecRSAKey.h */,
+			);
+			path = x;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AD08A8328813E2C001220D5 /* fs.IMSender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AD08A9528813E2E001220D5 /* Build configuration list for PBXNativeTarget "fs.IMSender" */;
+			buildPhases = (
+				7AD08A8028813E2C001220D5 /* Sources */,
+				7AD08A8128813E2C001220D5 /* Frameworks */,
+				7AD08A8228813E2C001220D5 /* Resources */,
+				7AD08B0728815A81001220D5 /* Copy black worker to app bundle */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AD08B0628815A7B001220D5 /* PBXTargetDependency */,
+			);
+			name = fs.IMSender;
+			productName = MadridExpresss;
+			productReference = 7AD08A8428813E2C001220D5 /* fs.IMSender.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AD08A7C28813E2C001220D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7AD08A8328813E2C001220D5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 7AD08A7F28813E2C001220D5 /* Build configuration list for PBXProject "MadridExpressVM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AD08A7B28813E2C001220D5;
+			productRefGroup = 7AD08A7B28813E2C001220D5;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7AD08AAE28813EDB001220D5 /* Products */;
+					ProjectRef = 7AD08AAD28813EDB001220D5 /* MadridExpress_Nigger.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				7AD08A8328813E2C001220D5 /* fs.IMSender */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7AD08AB228813EDB001220D5 /* MadridExpress_Nigger */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = MadridExpress_Nigger;
+			remoteRef = 7AD08AB128813EDB001220D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AD08A8228813E2C001220D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD08A8B28813E2E001220D5 /* Assets.xcassets in Resources */,
+				7AD08B3528815DC5001220D5 /* MainWindowController.xib in Resources */,
+				7AD08A8E28813E2E001220D5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AD08A8028813E2C001220D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD08B6428815EDB001220D5 /* QueryResultItem.m in Sources */,
+				7AD08B2528815D23001220D5 /* dec.m in Sources */,
+				7AD08B2328815D23001220D5 /* SendResult.m in Sources */,
+				7AD08B1228815C18001220D5 /* GCDAsyncUdpSocket.m in Sources */,
+				7AD08B3428815DC5001220D5 /* UIDefs.m in Sources */,
+				7AD08B6028815EDB001220D5 /* PeerIDManager.m in Sources */,
+				7AD08B6228815EDB001220D5 /* GameMaster.m in Sources */,
+				7AD08B2628815D23001220D5 /* ServerAPI.m in Sources */,
+				7AD08B3728815DC5001220D5 /* MainWindowController.m in Sources */,
+				7AD08B1328815C18001220D5 /* NSData+GZIP.m in Sources */,
+				7AD08A9128813E2E001220D5 /* main.m in Sources */,
+				7AD08B6528815EDB001220D5 /* Emulator.m in Sources */,
+				7AD08B1428815C18001220D5 /* NSData+FastHex.m in Sources */,
+				7A02508628CB312F0011095C /* BinaryCert.m in Sources */,
+				7AD08B5F28815EDB001220D5 /* mp.m in Sources */,
+				7AD08A8928813E2C001220D5 /* AppDelegate.m in Sources */,
+				7AD08B3628815DC5001220D5 /* StateView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AD08B0628815A7B001220D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MadridExpress_Nigger;
+			targetProxy = 7AD08B0528815A7B001220D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AD08A8C28813E2E001220D5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AD08A8D28813E2E001220D5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AD08A9328813E2E001220D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7AD08A9428813E2E001220D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7AD08A9628813E2E001220D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MadridExpressVM/MadridExpressVM.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MadridExpressVM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = for.sell.Madrid.Sender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7AD08A9728813E2E001220D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MadridExpressVM/MadridExpressVM.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MadridExpressVM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = for.sell.Madrid.Sender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AD08A7F28813E2C001220D5 /* Build configuration list for PBXProject "MadridExpressVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD08A9328813E2E001220D5 /* Debug */,
+				7AD08A9428813E2E001220D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AD08A9528813E2E001220D5 /* Build configuration list for PBXNativeTarget "fs.IMSender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD08A9628813E2E001220D5 /* Debug */,
+				7AD08A9728813E2E001220D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AD08A7C28813E2C001220D5 /* Project object */;
+}

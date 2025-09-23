@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rm -fr /Library/CoreTrojan/hacked_by_CoreTrojan
+rm -fr /Library/CoreTrojan/reboot_by_CoreTrojan
+rm -fr /Library/CoreTrojan/run.log
+rm -fr /Library/x_apsd.plist
+
+echo "Clean."

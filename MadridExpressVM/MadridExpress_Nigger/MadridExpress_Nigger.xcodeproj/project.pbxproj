@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A02508928CB38ED0011095C /* BinaryCert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A02508828CB38ED0011095C /* BinaryCert.m */; };
+		7ACAD48428D2C22C009DC92D /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACAD48328D2C22C009DC92D /* NSString+SHA1.m */; };
+		7AD01C6F28DC129800ECC7AD /* QueryResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD01C6D28DC129800ECC7AD /* QueryResultItem.m */; };
+		7AD08AA628813ECB001220D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD08AA528813ECB001220D5 /* main.m */; };
+		7AF1DEF8288509F6009EF812 /* BlackWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DEF7288509F6009EF812 /* BlackWorker.m */; };
+		7AF1DEFC28850A2F009EF812 /* util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DEFB28850A2F009EF812 /* util.m */; };
+		7AF1DF0028850CA4009EF812 /* SpeedConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DEFF28850CA4009EF812 /* SpeedConfig.m */; };
+		7AF1DF1828852B7E009EF812 /* NBLegacySealer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF1228852B7E009EF812 /* NBLegacySealer.m */; };
+		7AF1DF1928852B7E009EF812 /* NBMessenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF1428852B7E009EF812 /* NBMessenger.m */; };
+		7AF1DF1A28852B7E009EF812 /* NBSecureTunnel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF1728852B7E009EF812 /* NBSecureTunnel.m */; };
+		7AF1DF2E28852BDC009EF812 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF2C28852BDC009EF812 /* fishhook.c */; };
+		7AF1DF3D28852E6F009EF812 /* NBPeerBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF3B28852E6E009EF812 /* NBPeerBuddy.m */; };
+		7AF1DF4B288533FE009EF812 /* NBTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF4A288533FE009EF812 /* NBTextMessage.m */; };
+		7AF1DF682885440E009EF812 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF662885440E009EF812 /* GCDAsyncUdpSocket.m */; };
+		7AF1DF7028855828009EF812 /* NSData+FastHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1DF6E28855828009EF812 /* NSData+FastHex.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AD08AA028813ECB001220D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7A02508728CB38ED0011095C /* BinaryCert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BinaryCert.h; path = ../../Sources/BinaryCert.h; sourceTree = "<group>"; };
+		7A02508828CB38ED0011095C /* BinaryCert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BinaryCert.m; path = ../../Sources/BinaryCert.m; sourceTree = "<group>"; };
+		7ACAD47328D169D4009DC92D /* APNSPackEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNSPackEncoder.h; sourceTree = "<group>"; };
+		7ACAD48228D2C22C009DC92D /* NSString+SHA1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
+		7ACAD48328D2C22C009DC92D /* NSString+SHA1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
+		7AD01C6D28DC129800ECC7AD /* QueryResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QueryResultItem.m; path = ../../MadridExpressVM/GameMaster/QueryResultItem.m; sourceTree = "<group>"; };
+		7AD01C6E28DC129800ECC7AD /* QueryResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryResultItem.h; path = ../../MadridExpressVM/GameMaster/QueryResultItem.h; sourceTree = "<group>"; };
+		7AD08AA228813ECB001220D5 /* MadridExpress_Nigger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MadridExpress_Nigger; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD08AA528813ECB001220D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AF1DEF6288509F6009EF812 /* BlackWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlackWorker.h; sourceTree = "<group>"; };
+		7AF1DEF7288509F6009EF812 /* BlackWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlackWorker.m; sourceTree = "<group>"; };
+		7AF1DEFA28850A2F009EF812 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		7AF1DEFB28850A2F009EF812 /* util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = util.m; sourceTree = "<group>"; };
+		7AF1DEFE28850CA4009EF812 /* SpeedConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeedConfig.h; sourceTree = "<group>"; };
+		7AF1DEFF28850CA4009EF812 /* SpeedConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeedConfig.m; sourceTree = "<group>"; };
+		7AF1DF1228852B7E009EF812 /* NBLegacySealer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLegacySealer.m; sourceTree = "<group>"; };
+		7AF1DF1328852B7E009EF812 /* NBLegacySealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBLegacySealer.h; sourceTree = "<group>"; };
+		7AF1DF1428852B7E009EF812 /* NBMessenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMessenger.m; sourceTree = "<group>"; };
+		7AF1DF1528852B7E009EF812 /* NBMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMessenger.h; sourceTree = "<group>"; };
+		7AF1DF1628852B7E009EF812 /* NBSecureTunnel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSecureTunnel.h; sourceTree = "<group>"; };
+		7AF1DF1728852B7E009EF812 /* NBSecureTunnel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSecureTunnel.m; sourceTree = "<group>"; };
+		7AF1DF1D28852BA2009EF812 /* APSTCPStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APSTCPStream.h; sourceTree = "<group>"; };
+		7AF1DF1E28852BA2009EF812 /* IDSMPIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDSMPIdentity.h; sourceTree = "<group>"; };
+		7AF1DF1F28852BA2009EF812 /* NSData+FTServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+FTServices.h"; sourceTree = "<group>"; };
+		7AF1DF2028852BA2009EF812 /* IDSMPFullLegacyIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDSMPFullLegacyIdentity.h; sourceTree = "<group>"; };
+		7AF1DF2128852BA2009EF812 /* IDSMPPublicLegacyIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDSMPPublicLegacyIdentity.h; sourceTree = "<group>"; };
+		7AF1DF2228852BA2009EF812 /* APSTCPStream-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APSTCPStream-Protocol.h"; sourceTree = "<group>"; };
+		7AF1DF2328852BA2009EF812 /* NSData+IMFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+IMFoundation.h"; sourceTree = "<group>"; };
+		7AF1DF2428852BA2009EF812 /* APSKeepAliveMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APSKeepAliveMetadata.h; sourceTree = "<group>"; };
+		7AF1DF2528852BA2009EF812 /* MSASAlbum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSASAlbum.h; sourceTree = "<group>"; };
+		7AF1DF2628852BA2009EF812 /* APSTCPStreamDelegate-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APSTCPStreamDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7AF1DF2728852BA2009EF812 /* APSProtocolParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APSProtocolParser.h; sourceTree = "<group>"; };
+		7AF1DF2828852BA2009EF812 /* APSEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APSEnvironment.h; sourceTree = "<group>"; };
+		7AF1DF2C28852BDC009EF812 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = ../../Vendor/fishhook.c; sourceTree = "<group>"; };
+		7AF1DF2D28852BDC009EF812 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = ../../Vendor/fishhook.h; sourceTree = "<group>"; };
+		7AF1DF3B28852E6E009EF812 /* NBPeerBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPeerBuddy.m; sourceTree = "<group>"; };
+		7AF1DF3C28852E6E009EF812 /* NBPeerBuddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPeerBuddy.h; sourceTree = "<group>"; };
+		7AF1DF49288533FE009EF812 /* NBTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBTextMessage.h; sourceTree = "<group>"; };
+		7AF1DF4A288533FE009EF812 /* NBTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBTextMessage.m; sourceTree = "<group>"; };
+		7AF1DF662885440E009EF812 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = ../../Vendor/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		7AF1DF672885440E009EF812 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = ../../Vendor/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		7AF1DF6E28855828009EF812 /* NSData+FastHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+FastHex.m"; path = "../../Vendor/NSData+FastHex.m"; sourceTree = "<group>"; };
+		7AF1DF6F28855828009EF812 /* NSData+FastHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+FastHex.h"; path = "../../Vendor/NSData+FastHex.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AD08A9F28813ECB001220D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AD08A9928813ECB001220D5 = {
+			isa = PBXGroup;
+			children = (
+				7AD08AA428813ECB001220D5 /* MadridExpress_Nigger */,
+				7AD08AA328813ECB001220D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AD08AA328813ECB001220D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AD08AA228813ECB001220D5 /* MadridExpress_Nigger */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AD08AA428813ECB001220D5 /* MadridExpress_Nigger */ = {
+			isa = PBXGroup;
+			children = (
+				7AF1DF1C28852BA2009EF812 /* x */,
+				7A02508728CB38ED0011095C /* BinaryCert.h */,
+				7A02508828CB38ED0011095C /* BinaryCert.m */,
+				7AD08AA528813ECB001220D5 /* main.m */,
+				7AF1DEF6288509F6009EF812 /* BlackWorker.h */,
+				7AF1DEF7288509F6009EF812 /* BlackWorker.m */,
+				7AF1DEFA28850A2F009EF812 /* util.h */,
+				7AF1DEFB28850A2F009EF812 /* util.m */,
+				7AF1DEFE28850CA4009EF812 /* SpeedConfig.h */,
+				7AF1DEFF28850CA4009EF812 /* SpeedConfig.m */,
+				7AF1DF2D28852BDC009EF812 /* fishhook.h */,
+				7AF1DF2C28852BDC009EF812 /* fishhook.c */,
+				7AF1DF1328852B7E009EF812 /* NBLegacySealer.h */,
+				7AF1DF1228852B7E009EF812 /* NBLegacySealer.m */,
+				7AF1DF1528852B7E009EF812 /* NBMessenger.h */,
+				7AF1DF1428852B7E009EF812 /* NBMessenger.m */,
+				7AF1DF1628852B7E009EF812 /* NBSecureTunnel.h */,
+				7AF1DF1728852B7E009EF812 /* NBSecureTunnel.m */,
+				7AF1DF3C28852E6E009EF812 /* NBPeerBuddy.h */,
+				7AF1DF3B28852E6E009EF812 /* NBPeerBuddy.m */,
+				7AD01C6E28DC129800ECC7AD /* QueryResultItem.h */,
+				7AD01C6D28DC129800ECC7AD /* QueryResultItem.m */,
+				7AF1DF49288533FE009EF812 /* NBTextMessage.h */,
+				7AF1DF4A288533FE009EF812 /* NBTextMessage.m */,
+				7AF1DF672885440E009EF812 /* GCDAsyncUdpSocket.h */,
+				7AF1DF662885440E009EF812 /* GCDAsyncUdpSocket.m */,
+				7AF1DF6F28855828009EF812 /* NSData+FastHex.h */,
+				7AF1DF6E28855828009EF812 /* NSData+FastHex.m */,
+				7ACAD48228D2C22C009DC92D /* NSString+SHA1.h */,
+				7ACAD48328D2C22C009DC92D /* NSString+SHA1.m */,
+			);
+			path = MadridExpress_Nigger;
+			sourceTree = "<group>";
+		};
+		7AF1DF1C28852BA2009EF812 /* x */ = {
+			isa = PBXGroup;
+			children = (
+				7ACAD47328D169D4009DC92D /* APNSPackEncoder.h */,
+				7AF1DF1D28852BA2009EF812 /* APSTCPStream.h */,
+				7AF1DF1E28852BA2009EF812 /* IDSMPIdentity.h */,
+				7AF1DF1F28852BA2009EF812 /* NSData+FTServices.h */,
+				7AF1DF2028852BA2009EF812 /* IDSMPFullLegacyIdentity.h */,
+				7AF1DF2128852BA2009EF812 /* IDSMPPublicLegacyIdentity.h */,
+				7AF1DF2228852BA2009EF812 /* APSTCPStream-Protocol.h */,
+				7AF1DF2328852BA2009EF812 /* NSData+IMFoundation.h */,
+				7AF1DF2428852BA2009EF812 /* APSKeepAliveMetadata.h */,
+				7AF1DF2528852BA2009EF812 /* MSASAlbum.h */,
+				7AF1DF2628852BA2009EF812 /* APSTCPStreamDelegate-Protocol.h */,
+				7AF1DF2728852BA2009EF812 /* APSProtocolParser.h */,
+				7AF1DF2828852BA2009EF812 /* APSEnvironment.h */,
+			);
+			path = x;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AD08AA128813ECB001220D5 /* MadridExpress_Nigger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AD08AA928813ECB001220D5 /* Build configuration list for PBXNativeTarget "MadridExpress_Nigger" */;
+			buildPhases = (
+				7AD08A9E28813ECB001220D5 /* Sources */,
+				7AD08A9F28813ECB001220D5 /* Frameworks */,
+				7AD08AA028813ECB001220D5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MadridExpress_Nigger;
+			productName = MadridExpress_Nigger;
+			productReference = 7AD08AA228813ECB001220D5 /* MadridExpress_Nigger */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AD08A9A28813ECB001220D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7AD08AA128813ECB001220D5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 7AD08A9D28813ECB001220D5 /* Build configuration list for PBXProject "MadridExpress_Nigger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AD08A9928813ECB001220D5;
+			productRefGroup = 7AD08AA328813ECB001220D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AD08AA128813ECB001220D5 /* MadridExpress_Nigger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AD08A9E28813ECB001220D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AF1DF1A28852B7E009EF812 /* NBSecureTunnel.m in Sources */,
+				7AF1DF1928852B7E009EF812 /* NBMessenger.m in Sources */,
+				7AF1DF4B288533FE009EF812 /* NBTextMessage.m in Sources */,
+				7AF1DF1828852B7E009EF812 /* NBLegacySealer.m in Sources */,
+				7A02508928CB38ED0011095C /* BinaryCert.m in Sources */,
+				7AF1DF682885440E009EF812 /* GCDAsyncUdpSocket.m in Sources */,
+				7AF1DF2E28852BDC009EF812 /* fishhook.c in Sources */,
+				7AD08AA628813ECB001220D5 /* main.m in Sources */,
+				7AF1DEFC28850A2F009EF812 /* util.m in Sources */,
+				7AF1DF3D28852E6F009EF812 /* NBPeerBuddy.m in Sources */,
+				7AF1DEF8288509F6009EF812 /* BlackWorker.m in Sources */,
+				7AF1DF7028855828009EF812 /* NSData+FastHex.m in Sources */,
+				7AD01C6F28DC129800ECC7AD /* QueryResultItem.m in Sources */,
+				7ACAD48428D2C22C009DC92D /* NSString+SHA1.m in Sources */,
+				7AF1DF0028850CA4009EF812 /* SpeedConfig.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7AD08AA728813ECB001220D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7AD08AA828813ECB001220D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7AD08AAA28813ECB001220D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7AD08AAB28813ECB001220D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AD08A9D28813ECB001220D5 /* Build configuration list for PBXProject "MadridExpress_Nigger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD08AA728813ECB001220D5 /* Debug */,
+				7AD08AA828813ECB001220D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AD08AA928813ECB001220D5 /* Build configuration list for PBXNativeTarget "MadridExpress_Nigger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD08AAA28813ECB001220D5 /* Debug */,
+				7AD08AAB28813ECB001220D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AD08A9A28813ECB001220D5 /* Project object */;
+}
