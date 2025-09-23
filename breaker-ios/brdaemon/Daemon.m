@@ -13,10 +13,6 @@
 #import <objc/runtime.h>
 #import <notify.h>
 #import <mach/mach.h>
-#import <dlfcn.h>
-#import "x/MadGate.h"
-#import "x/NKSessionManager.h"
-#import "../src/NSData+FastHex.h"
 
 // link /usr/lib/libMobileGestalt.dylib
 extern id MGCopyAnswer(NSString *inKey);
@@ -35,7 +31,6 @@ extern id MGCopyAnswer(NSString *inKey);
 @property (assign, nonatomic) int currentStage; 
 @property (assign, nonatomic) int expectedStage;
 
-// ucrt
 @property (strong, nonatomic) NSString *origSN;
 
 @end
@@ -132,13 +127,13 @@ extern id MGCopyAnswer(NSString *inKey);
 		{
 			nk_imsg_kill();
 			NSLog(@"STAGE_FAKE_DEVICE");
-			[self _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_APPLEID];
+			[self _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_ACCOUNT];
 			[self.provider fetchAppleId];
 			break;
 		}
-		case STAGE_APPLEID:
+		case STAGE_ACCOUNT:
 		{
-			NSLog(@"STAGE_APPLEID");
+			NSLog(@"STAGE_ACCOUNT");
 			[self _checkStageTimeout:TIMEOUT_STAGE_IMS_REGISTER expectedStage:STAGE_IMS_REGISTER];
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 	        	[IMAutoLoginHelper prefsIMLogin];
@@ -172,6 +167,15 @@ extern id MGCopyAnswer(NSString *inKey);
 				[self _enterStage:STAGE_RESET];
 			}
 			break;
+		}
+		case STAGE_SWEEP_UP:
+		{
+			break;
+		}
+
+		case STAGE_BREAK_IT:
+		{
+
 		}
 
 		case STAGE_UPLOAD_CERT:

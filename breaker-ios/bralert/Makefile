@@ -2,8 +2,8 @@ ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = MDAlert
-MDAlert_FILES = Tweak.xm \
+TWEAK_NAME = BRAlert
+BRAlert_FILES = Tweak.xm \
 	../src/Account.m \
 	PasscodeManager.m \
 	x_alert.xm \

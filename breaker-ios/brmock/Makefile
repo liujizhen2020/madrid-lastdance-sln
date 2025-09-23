@@ -2,8 +2,8 @@ ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = MDMock
-MDMock_FILES = Tweak.xm \
+TWEAK_NAME = BRMock
+BRMock_FILES = Tweak.xm \
 	x_io.xm \
 	x_mg.xm \
 	../src/Device.m \

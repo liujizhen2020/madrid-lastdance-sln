@@ -1,5 +1,5 @@
-Package: com.yourcompany.md.daemon
-Name: MD - Daemon
+Package: com.yourcompany.br.daemon
+Name: BRDaemon
 Depends: 
 Version: 0.0.1
 Architecture: iphoneos-arm

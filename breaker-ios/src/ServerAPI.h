@@ -6,11 +6,9 @@
 
 @optional
 
-- (void)providerDidSyncCloudBaseURL:(NSString *)baseURL;
 - (void)providerDidFetchDevice:(Device *)d withActivationRecord:(NSDictionary *)activationRecord withError:(NSError *)err;
 - (void)providerDidFetchAppleId:(Account *)acc withError:(NSError *)err;
-- (void)providerDidFetchActivationRecord:(NSDictionary *)record withError:(NSError *)err;
-- (void)providerDidReportBinaryCert:(BinaryCert *)cert withOrigSN:(NSString *)origSN withError:(NSError *)err;
+- (void)providerDidReportBreakResult:(NSString *)acc withSN:(NSString *)sn withError:(NSError *)err;
 
 @end
 
@@ -20,11 +18,10 @@
 @property (retain, nonatomic) id<ServerAPIDelegate> delegate;
 
 // connections 
-- (void)syncCloudBaseURL;
 - (void)fetchDevice;
 - (void)fetchAppleId;
-- (void)reportBadDevice:(Device *)fd;
+- (void)reportBadDevice:(Device *)d;
 - (void)reportBadAccount:(Account *)acc;
-- (void)reportBinaryCert:(BinaryCert *)cert withOrigSN:(NSString *)origSN;
+- (void)reportBreakResult:(NSString *)acc withSN:(NSString *)sn;
 
 @end

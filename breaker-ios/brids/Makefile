@@ -2,8 +2,8 @@ ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = MDIds
-MDIds_FILES = Tweak.xm \
+TWEAK_NAME = BRIds
+BRIds_FILES = Tweak.xm \
 	x_ft_noclean.xm \
 	x_ids.xm \
 	../src/Account.m \

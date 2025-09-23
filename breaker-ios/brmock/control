@@ -1,5 +1,5 @@
-Package: com.yourcompany.md.mock
-Name: MD - Mock
+Package: com.yourcompany.br.mock
+Name: BRMock
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm

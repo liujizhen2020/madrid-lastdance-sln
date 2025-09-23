@@ -2,7 +2,7 @@ Package: com.yourcompany.breaker
 Name: Breaker
 Version: 2507241547
 Depends: mobilesubstrate, firmware (>= 12.0)
-Replaces: com.yourcompany.br.daemon, com.yourcompany.br.mock, com.yourcompany.br.mad, com.yourcompany.br.alert, com.yourcompany.br.reg, com.yourcompany.br.watchdog
+Replaces: com.yourcompany.br.daemon, com.yourcompany.br.mock, com.yourcompany.br.alert, com.yourcompany.br.reg, com.yourcompany.br.watchdog
 Architecture: iphoneos-arm
 Description: BR
 Maintainer: Apple

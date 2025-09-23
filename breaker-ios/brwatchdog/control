@@ -1,5 +1,5 @@
-Package: com.yourcompany.md.watchdog
-Name: MD - Watchdog
+Package: com.yourcompany.br.watchdog
+Name: BRWatchDog
 Depends: 
 Version: 0.0.1
 Architecture: iphoneos-arm

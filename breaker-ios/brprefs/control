@@ -1,9 +1,9 @@
-Package: com.yourcompany.md.prefs
-Name: MDPrefs
+Package: com.yourcompany.br.prefs
+Name: BRPrefs
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: An awesome MobileSubstrate tweak!
-Maintainer: im
-Author: im
+Maintainer: Apple Inc
+Author: Apple Inc
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000)

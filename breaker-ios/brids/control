@@ -1,5 +1,5 @@
-Package: com.yourcompany.md.ids
-Name: MD - Ids
+Package: com.yourcompany.br.ids
+Name: BRIds
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
