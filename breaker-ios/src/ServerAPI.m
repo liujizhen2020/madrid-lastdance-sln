@@ -12,7 +12,7 @@ static NSString *kUserAgent = @"Madrid";
 {
     int _connMax;
     int _connOut;
-    NSString* _cloudBaseURL;
+    NSString* _baseURL;
 }
 
 @end
@@ -24,6 +24,7 @@ static NSString *kUserAgent = @"Madrid";
     if (self){
         _connMax = (int)[NSURLSessionConfiguration defaultSessionConfiguration].HTTPMaximumConnectionsPerHost;
         _connOut = 0;
+        _baseURL = @"http://";
     }
     return self;
 }
@@ -37,39 +38,10 @@ static NSString *kUserAgent = @"Madrid";
     return _connOut;
 }
 
-- (void)syncCloudBaseURL{
-    __block ServerAPI *weakSelf = self;
-    NSURL *fetchURL = [NSURL URLWithString:@"http://47.76.25.239:8888/server/activate?"];
-    NSMutableURLRequest *fetchReq = [NSMutableURLRequest requestWithURL:fetchURL];
-    [fetchReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
-    NSURLSessionDataTask *fetchTask = [[NSURLSession sharedSession] dataTaskWithRequest:fetchReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        //NSLog(@"rsp %@, err %@", response, error);
-        NSString *url = @"";
-        if (error){
-            _cloudBaseURL = @"http://47.76.25.239:8899";
-        }else{
-            NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            NSInteger code = [resp[@"RetCode"] integerValue];
-            if (code == 1){
-                url = resp[@"Data"];
-                _cloudBaseURL = url;
-            }else{
-                _cloudBaseURL = @"http://47.76.25.239:8899";
-            }
-        }
-        if ([self.delegate respondsToSelector:@selector(providerDidSyncCloudBaseURL:)]){
-            dispatch_async(dispatch_get_main_queue(),^(){
-                [weakSelf.delegate providerDidSyncCloudBaseURL:url];
-            });
-        }
-    }];
-    [fetchTask resume];
-}   
-
 - (void)fetchDevice {
     NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     __block ServerAPI *weakSelf = self;
-    NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/iphoneCode/getDeviceToBind",_cloudBaseURL]];
+    NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/iphoneCode/getDeviceToBind",_baseURL]];
     NSMutableURLRequest *fetchReq = [NSMutableURLRequest requestWithURL:fetchURL];
     [fetchReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *fetchTask = [[NSURLSession sharedSession] dataTaskWithRequest:fetchReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
@@ -137,7 +109,7 @@ static NSString *kUserAgent = @"Madrid";
     }
     _connOut++;
     __block ServerAPI *weakSelf = self;
-    NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/getIDToBind",_cloudBaseURL]];
+    NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/getIDToBind",_baseURL]];
     NSMutableURLRequest *fetchReq = [NSMutableURLRequest requestWithURL:fetchURL];
     [fetchReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *fetchTask = [[NSURLSession sharedSession] dataTaskWithRequest:fetchReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
@@ -192,7 +164,7 @@ static NSString *kUserAgent = @"Madrid";
     //NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     NSString *query = [NSString stringWithFormat:@"serial=%@&status=%d", d.SN, -100];
     //NSLog(@"http query is %@", query); 
-    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/iphoneCode/disabledStatus",_cloudBaseURL]];
+    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/iphoneCode/disabledStatus",_baseURL]];
     NSMutableURLRequest *reportReq = [NSMutableURLRequest requestWithURL:reportURL];
     [reportReq setHTTPMethod:@"POST"];
     [reportReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
@@ -219,10 +191,9 @@ static NSString *kUserAgent = @"Madrid";
     if (email == nil){
         return;
     }
-
     NSString *query = [NSString stringWithFormat:@"email=%@&status=%d", email, -1];
     //NSLog(@"reportBadAccount: query is %@", query); 
-    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/disabledStatus",_cloudBaseURL]];
+    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/disabledStatus",_baseURL]];
     NSMutableURLRequest *reportReq = [NSMutableURLRequest requestWithURL:reportURL];
     [reportReq setHTTPMethod:@"POST"];
     [reportReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
@@ -240,28 +211,21 @@ static NSString *kUserAgent = @"Madrid";
     [reportTask resume];
 }
 
-- (void)reportBinaryCert:(BinaryCert *)cert withOrigSN:(NSString *)origSN {
+- (void)reportBreakResult:(NSString *)acc withSN:(NSString *)sn {
     NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    NSData *pack = [cert packedData];
-    if (pack == nil){
-        NSLog(@"pack is nil");
-        return;
-    }
-    NSDictionary *ret = @{@"OrigSN":origSN,@"SN": cert.SN, @"ACC":cert.email,  @"CertBox": [pack base64EncodedStringWithOptions:0]};
+    NSDictionary *ret = @{@"ACC":acc,@"SN":sn};
     NSData *body = [NSJSONSerialization dataWithJSONObject:ret options:0 error:nil];
     if (body == nil){
         NSLog(@"body is nil");
         return;
     }
-
-    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/iphoneCode/postBindingCert",_cloudBaseURL]];
+    NSURL *reportURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/postBreak",_baseURL]];
     NSMutableURLRequest *reportReq = [NSMutableURLRequest requestWithURL:reportURL];
     [reportReq setHTTPMethod:@"POST"];
     [reportReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
     [reportReq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [reportReq setHTTPBody:body];
     NSURLSessionDataTask *reportTask = [[NSURLSession sharedSession] dataTaskWithRequest:reportReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        // NSLog(@"got err %@, resp %@", error, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         NSError *reportErr = nil;
         if (error != nil){
             reportErr = [NSError errorWithDomain:@"ERR_NETWORK" code:ERROR_NETWORK userInfo:nil];
@@ -269,13 +233,13 @@ static NSString *kUserAgent = @"Madrid";
             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             NSInteger code = [resp[@"RetCode"] integerValue];
             if (code != 1 ){
-                NSLog(@"WARNING...report cert box NG");
+                NSLog(@"WARNING...report break result NG");
                 reportErr = [NSError errorWithDomain:@"ERROR_SERVER_LOGIC" code:ERROR_SERVER_LOGIC userInfo:nil];
             }
         }
 
-        if ([self.delegate respondsToSelector:@selector(providerDidReportBinaryCert:withOrigSN:withError:)]){
-            [self.delegate providerDidReportBinaryCert:cert withOrigSN:origSN withError:reportErr];
+        if ([self.delegate respondsToSelector:@selector(providerDidReportBreakResult:withSN:withError:)]){
+            [self.delegate providerDidReportBreakResult:acc withSN:sn withError:reportErr];
         }
     }];
     [reportTask resume];

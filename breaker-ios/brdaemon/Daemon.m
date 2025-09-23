@@ -6,7 +6,6 @@
 #import "../src/Device.h"
 #import "../src/ServerAPI.h"
 #import "../src/nk_run_cmd.h"
-#import "../src/BinaryCert.h"
 #import "../src/dump.h"
 #import "../src/IMAutoLoginHelper.h"
 #import "../src/IMAutoLoginHelper+Caller.h"
@@ -30,8 +29,6 @@ extern id MGCopyAnswer(NSString *inKey);
 
 @property (assign, nonatomic) int currentStage; 
 @property (assign, nonatomic) int expectedStage;
-
-@property (strong, nonatomic) NSString *origSN;
 
 @end
 
@@ -79,7 +76,6 @@ extern id MGCopyAnswer(NSString *inKey);
 			[self _writeResetFlag];
 			[self _invalidateStageTimer];
 			[self _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_DEVICE_INFO];
-			[self.provider syncCloudBaseURL];
 			break;
 		}
 		case STAGE_DEVICE_INFO:
@@ -143,29 +139,8 @@ extern id MGCopyAnswer(NSString *inKey);
 		case STAGE_IMS_REGISTER:
 		{
 			NSLog(@"STAGE_IMS_REGISTER");
-			BinaryCert *cert = [BinaryCert IMCert];
-			cert.SN = self.device.SN;
-			cert.email = self.account.email;
-			BOOL ok = YES;
-			if (dump_ids_registration(cert) != kDumpOK){
-				NSLog(@"dump_ids_registration NG");
-				ok = NO;
-			}
-			if (dump_message_protection_keys(cert) != kDumpOK){
-				NSLog(@"dump_message_protection_keys NG");
-				ok = NO;
-			}
-			if (dump_push_cert_and_key(cert) != kDumpOK){
-				NSLog(@"dump_push_cert_and_key NG");
-			}
-			NSLog(@"dumped. %@", cert);
-			if (ok && [cert checkValid]){
-				[self _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_UPLOAD_CERT];
-				[self.provider reportBinaryCert:cert withOrigSN:self.origSN];
-			}else{
-				NSLog(@"BinaryCert check NG");
-				[self _enterStage:STAGE_RESET];
-			}
+			kc_clear_imsg();
+			nk_imsg_kill();
 			break;
 		}
 		case STAGE_SWEEP_UP:
