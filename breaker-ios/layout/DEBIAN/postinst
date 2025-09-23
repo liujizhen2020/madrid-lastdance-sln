@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# log
+rm -fr /tmp/*.plist
+cat /dev/null > /tmp/breaker_std.log
+cat /dev/null > /tmp/breaker_err.log
+
+# clear old
+killall -9 BRDaemon
+
+# start new
+chmod 644 /Library/LaunchDaemons/breaker.plist
+chown root:wheel /Library/LaunchDaemons/breaker.plist
+launchctl load /Library/LaunchDaemons/breaker.plist
+
+chmod 644 /Library/LaunchDaemons/brwatchdog.plist
+chown root:wheel /Library/LaunchDaemons/brwatchdog.plist
+launchctl load /Library/LaunchDaemons/brwatchdog.plist
+
+# now respring
+killall -9 SpringBoard
+
+exit 0

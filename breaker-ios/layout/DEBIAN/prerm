@@ -1,0 +1,18 @@
+#!/bin/sh
+
+launchctl unload /Library/LaunchDaemons/breaker.plist
+launchctl stop BRDaemon
+launchctl remove BRDaemon
+
+
+launchctl unload /Library/LaunchDaemons/brwatchdog.plist
+launchctl stop BRWatchdog
+launchctl remove BRWatchdog
+
+test -f /Library/nk_biz.plist && rm -f /Library/nk_biz.plist
+# test -f /Library/CE_UCRT.pem && rm -f /Library/CE_UCRT.pem
+
+killall -9 BRDaemon
+killall -9 BRWatchdog
+
+exit 0
