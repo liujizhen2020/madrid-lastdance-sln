@@ -57,36 +57,28 @@ func (b *BBreakerPortableImpl) ImportParse(line string) (interface{}, error) {
 
 func (p *BBreakerPortableImpl) ExportWrite(writer *csv.Writer, entity interface{}) error {
 	appleId := entity.(entities.AppleId)
-	if appleId.PID == "" {
-		err := writer.Write([]string{appleId.Email, appleId.Password})
-		return err
-	} else {
-		err := writer.Write([]string{appleId.Email, appleId.Password, appleId.PID})
-		return err
+	if appleId.SecType == SecType_Safty_Questions {
+		err = writer.Write([]string{appleId.Email, appleId.Password, appleId.SecQuestion1, appleId.SecAnswer1, appleId.SecQuestion2, appleId.SecAnswer2, appleId.SecQuestion3, appleId.SecAnswer3})
+	} else if appleId.SecType == SecType_Two_Factor {
+		err = writer.Write([]string{appleId.Email, appleId.Password, appleId.SecAPI})
 	}
+	return err
 }
 
-func (s *BBreakerServe) FetchAppleId(sn string) (entities.AppleId, error) {
-	BMACCODE_SERVE.CodeToIMReg(sn)
+func (s *BBreakerServe) FetchBreaker() (entities.AppleId, error) {
 	ac := entities.AppleId{}
-	if models.METACACHE_MODEL.IsTrailerOn() {
-		err := atrailer_mbase.PopOne(bson.M{"TrailerLine": bson.M{"$lt": time.Now()}}, &ac)
-		if err == nil {
-			return ac, nil
-		}
-	}
-	err := a0_mbase.PopOne(bson.M{}, &ac)
+	err := br0_mbase.PopOne(bson.M{}, &ac)
 	if err != nil {
 		return ac, errors.New("ID缓存队列已空...")
 	}
 	ac.CreateAt = time.Now()
 	ac.DispNum = ac.DispNum + 1
-	a1_mbase.PushOne(ac)
+	br1_mbase.PushOne(ac)
 	return ac, nil
 }
 
 func (s *BBreakerServe) NoBarrier() (bool, error) {
-	es, err := a0_mbase.EstimatedSize()
+	es, err := br0_mbase.EstimatedSize()
 	return es > 0, err
 }
 
@@ -102,13 +94,13 @@ func (s *BBreakerServe) Export(writer *csv.Writer, status int64) {
 func (s *BBreakerServe) getMCollByIndex(status int64) (*mongoc.MongoColl, error) {
 	switch status {
 	case models.X_AccountFree:
-		return a0_mbase, nil
+		return br0_mbase, nil
 	case models.X_AccountLogin:
-		return a1_mbase, nil
-	case models.X_IMReady:
-		return a100_mbase, nil
+		return br1_mbase, nil
+	case models.X_AccountReady:
+		return br100_mbase, nil
 	case models.X_AccountFatal:
-		return an1_mbase, nil
+		return brng_mbase, nil
 	}
 	return nil, errors.New("Not Collection Matched")
 
@@ -135,55 +127,23 @@ func (s *BBreakerServe) SizeOfCollIndex(collIndex int64) (int64, error) {
 
 func (s *BBreakerServe) DisabledStatus(email string) error {
 	appleId := entities.AppleId{}
-	err := a1_mbase.PopOne(bson.M{"Email": email}, &appleId)
+	err := br1_mbase.PopOne(bson.M{"Email": email}, &appleId)
 	if err != nil {
 		return err
 	}
-	an1_mbase.PushOne(appleId)
+	brng_mbase.PushOne(appleId)
 	return nil
 }
 
-func (s *BBreakerServe) SuccBroken(email string) entities.AppleId {
+func (s *BBreakerServe) BrokenSucc(email string) error {
 	acc := entities.AppleId{}
-	err := a1_mbase.PopOne(bson.M{"Email": email}, &acc)
+	err := br1_mbase.PopOne(bson.M{"Email": email}, &acc)
 	if err != nil {
-		err := a100_mbase.FindOne(bson.M{"Email": email}, &acc)
-		if err != nil {
-			return entities.AppleId{Email: email}
-		}
-		return acc
+		return err
 	}
-	s.IncBindingNum(acc.Tag)
 	acc.CreateAt = time.Now()
-	a100_mbase.PushOne(acc)
-	if !models.METACACHE_MODEL.IsTrailerOn() {
-		return acc
-	}
-	trailer_num := models.METACACHE_MODEL.QueryMETAInteger(models.TRAILER_NUM_APPLEID, 3)
-	for i := int64(0); i < trailer_num-1; i++ {
-		d := i * 3
-		dur := common.TimeForOffset(fmt.Sprintf("%dm", d))
-		acc.TrailerLine = dur
-		atrailer_mbase.PushOne(acc)
-	}
-	return acc
-}
-
-func (s *BBreakerServe) FindByEmail(email string) (entities.AppleId, error) {
-	id := entities.AppleId{}
-	err := a100_mbase.FindOne(bson.M{"Email": email}, &id)
-	if err == nil {
-		return id, nil
-	}
-	err = a1_mbase.FindOne(bson.M{"Email": email}, &id)
-	if err == nil {
-		return id, nil
-	}
-	err = a0_mbase.FindOne(bson.M{"Email": email}, &id)
-	if err == nil {
-		return id, nil
-	}
-	return id, fmt.Errorf("not found")
+	br100_mbase.PushOne(acc)
+	return nil
 }
 
 func (s *BBreakerServe) RecyleForFailed() (int64, error) {
@@ -191,5 +151,5 @@ func (s *BBreakerServe) RecyleForFailed() (int64, error) {
 	recyle_before := timeForOffset(fmt.Sprintf("-%dm", recycle_interval))
 	max_recyclenum := models.METACACHE_MODEL.QueryMETAInteger(models.RECYCLE_NUM_APPLEID, 6)
 	var appleid entities.AppleId
-	return s.CollectionPorter(a1_mbase, a0_mbase, bson.M{"CreateAt": bson.M{"$lte": recyle_before}, "DispNum": bson.M{"$lt": max_recyclenum}}, &appleid, "Email", "")
+	return s.CollectionPorter(br1_mbase, br0_mbase, bson.M{"CreateAt": bson.M{"$lte": recyle_before}, "DispNum": bson.M{"$lt": max_recyclenum}}, &appleid, "Email", "")
 }

@@ -4,7 +4,7 @@ const (
 	X_AccountFatal = -1
 	X_AccountFree  = 0
 	X_AccountLogin = 1
-	X_IMReady      = 100
+	X_AccountReady = 100
 
 	S_MacFree      = 0
 	S_MacInitilize = 1
