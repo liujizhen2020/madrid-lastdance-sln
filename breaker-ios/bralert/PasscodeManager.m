@@ -45,7 +45,7 @@
       return;
   }
 
-  NSURL *postURL = [NSURL URLWithString:@"http://107.148.49.124:6666/idproxy/secCode?"];
+  NSURL *postURL = [NSURL URLWithString:@"http://103.86.46.189:5555/idproxy/secCode?"];
   NSMutableURLRequest *postReq = [NSMutableURLRequest requestWithURL:postURL];
   [postReq setHTTPMethod:@"POST"];
   [postReq setValue:@"Mobile" forHTTPHeaderField:@"User-Agent"];

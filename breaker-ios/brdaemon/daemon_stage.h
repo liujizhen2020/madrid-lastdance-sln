@@ -7,7 +7,7 @@
 #define STAGE_ACCOUNT        	    3
 #define STAGE_IMS_REGISTER          4
 #define STAGE_SWEEP_UP              5
-#define SATGE_BREAK_IT              6
+#define STAGE_BREAK_IT              6
 #define STAGE_UPLOAD_RESULT         7
 
 // timeouts for stage

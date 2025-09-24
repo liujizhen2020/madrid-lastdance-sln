@@ -13,7 +13,6 @@ BRDaemon_FILES = main.mm \
 	../src/dec.m \
 	../src/nk_run_cmd.m \
 	../src/NKSessionManager.m \
-	../src/dump.m \
 	../src/keychain.m \
 	../src/NSData+FastHex.m \
 	../src/IMAutoLoginHelper+Caller.m \

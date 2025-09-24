@@ -1,9 +1,0 @@
-Package: com.yourcompany.md.mock
-Name: MD - Mock
-Depends: mobilesubstrate
-Version: 0.0.1
-Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: Apple Inc
-Author: Apple Inc
-Section: Tweaks

@@ -2,7 +2,6 @@
 #import "dec.h"
 #import "Device.h"
 #import "Account.h"
-#import "BinaryCert.h"
 #import "../common/defines.h"
 
 static NSString *kDecryptKey = @"ABCDEFGHIJKLMNOP";

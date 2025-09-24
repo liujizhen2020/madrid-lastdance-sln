@@ -6,7 +6,6 @@
 #import "../src/Device.h"
 #import "../src/ServerAPI.h"
 #import "../src/nk_run_cmd.h"
-#import "../src/dump.h"
 #import "../src/IMAutoLoginHelper.h"
 #import "../src/IMAutoLoginHelper+Caller.h"
 #import <objc/runtime.h>
@@ -45,8 +44,7 @@ extern id MGCopyAnswer(NSString *inKey);
 	[self _registerNotifyHandlers];
     self.provider = [ServerAPI new];
     self.provider.delegate = self;
-    self.origSN = (NSString *)MGCopyAnswer(@"SerialNumber");
-    [self _enterStage:STAGE_RESET];
+   [self _enterStage:STAGE_RESET];
 }
 
 - (void) _writeResetFlag{
@@ -63,7 +61,7 @@ extern id MGCopyAnswer(NSString *inKey);
 		NSLog(@"WARN~ wrong stage! (new %d ～ %d expected)", newStage, self.expectedStage);
 		return;
 	}	
-    // __block Daemon *weakSelf = self;
+    __block Daemon *weakSelf = self;
     switch (newStage){
 		case STAGE_RESET:
 		{
@@ -139,23 +137,34 @@ extern id MGCopyAnswer(NSString *inKey);
 		case STAGE_IMS_REGISTER:
 		{
 			NSLog(@"STAGE_IMS_REGISTER");
-			kc_clear_imsg();
-			nk_imsg_kill();
+			[self _checkStageTimeout:TIMEOUT_STAGE_OTHER_STEP expectedStage:STAGE_SWEEP_UP];
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	        	kc_clear_imsg();
+				nk_imsg_kill();
+				[weakSelf _enterStage:STAGE_SWEEP_UP];
+	    	});
 			break;
 		}
 		case STAGE_SWEEP_UP:
 		{
+			[self _checkStageTimeout:TIMEOUT_STAGE_IMS_REGISTER expectedStage:STAGE_BREAK_IT];
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	        	[IMAutoLoginHelper prefsIMLogin];
+	    	});
 			break;
 		}
 
 		case STAGE_BREAK_IT:
 		{
-
+			NSDictionary *dict = @{@"sn":self.device.SN,@"email":self.account.email};
+			NSString *fName = [NSString stringWithFormat:@"/tmp/%@.plist",self.device.SN];
+			[dict writeToFile:fName atomically:NO];
+			exit(0);
 		}
 
-		case STAGE_UPLOAD_CERT:
+		case STAGE_UPLOAD_RESULT:
 		{
-			NSLog(@"STAGE_UPLOAD_CERT");
+			NSLog(@"STAGE_UPLOAD_RESULT");
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 	        	[self _enterStage:STAGE_RESET];
 	    	});
@@ -190,14 +199,20 @@ extern id MGCopyAnswer(NSString *inKey);
 	if (isSucc){
 		if(self.expectedStage == STAGE_IMS_REGISTER){
 			[self _enterStage:STAGE_IMS_REGISTER];
+		}else if (self.expectedStage == STAGE_BREAK_IT){
+			NSLog(@"IMS appleId maybe so good!!!");
+			//maybe upload as so good id;
 		}else{
-			NSLog(@"IMS registered in unknow expectedStage:%d",self.expectedStage);
+			NSLog(@"IMS registered in unknow expectedStage:%d,ignore it",self.expectedStage);
 		}	
 	}else{
 		if(self.expectedStage == STAGE_IMS_REGISTER){
-			[self _enterStage:STAGE_RESET];
+			self.expectedStage = STAGE_BREAK_IT;
+			[self _enterStage:STAGE_BREAK_IT];
+		}else if(self.expectedStage == STAGE_BREAK_IT){
+			[self _enterStage:STAGE_BREAK_IT];
 		}else{
-			NSLog(@"IMS regfatal in unknow expectedStage:%d",self.expectedStage);
+			NSLog(@"IMS regfatal in unknow expectedStage:%d,ignore it",self.expectedStage);
 		}
 	}
 }
@@ -227,7 +242,7 @@ extern id MGCopyAnswer(NSString *inKey);
 		NSLog(@"got NOTIFY_APPLE_ID_FATAL");
 		if(weakSelf.expectedStage == STAGE_IMS_REGISTER){
 			[weakSelf.provider reportBadAccount:weakSelf.account];
-			[weakSelf _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_APPLEID];
+			[weakSelf _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_ACCOUNT];
 			nk_run_cmd("killall -9 Preferences");
 			[weakSelf.provider fetchAppleId];
 		}
@@ -238,7 +253,7 @@ extern id MGCopyAnswer(NSString *inKey);
 		NSLog(@"got NOTIFY_APPLE_ID_LOCKED");
 		if(weakSelf.expectedStage == STAGE_IMS_REGISTER){
 			[weakSelf.provider reportBadAccount:weakSelf.account];
-			[weakSelf _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_APPLEID];
+			[weakSelf _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_ACCOUNT];
 			nk_run_cmd("killall -9 Preferences");
 			[weakSelf.provider fetchAppleId];
 		}
@@ -247,11 +262,6 @@ extern id MGCopyAnswer(NSString *inKey);
 }
 
 #pragma mark - ServerAPIDelegate
-
-- (void)providerDidSyncCloudBaseURL:(NSString *)baseURL{
-	NSLog(@"serve for endpoint:%@",baseURL);
-	[self.provider fetchDevice];
-}
 
 - (void)providerDidFetchDevice:(Device *)device withActivationRecord:(NSDictionary *)activationRecord withError:(NSError *)err {
     NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -277,16 +287,16 @@ extern id MGCopyAnswer(NSString *inKey);
 		NSLog(@"providerDidFetchAppleId...err %@", err);
 		return;
 	}
-	if (self.expectedStage != STAGE_APPLEID){
+	if (self.expectedStage != STAGE_ACCOUNT){
 		NSLog(@"WARN~ we got account... but not expecting... now DROP it");
 		return;
 	}
     self.account = acc;
     [self.account write:ACCOUNT_INFO_PATH];
-    [self _enterStage:STAGE_APPLEID];
+    [self _enterStage:STAGE_ACCOUNT];
 }
 
-- (void)providerDidReportBinaryCert:(BinaryCert *)cert withOrigSN:(NSString *)origSN withError:(NSError *)err {
+- (void)providerDidReportBreakResult:(NSString *)acc withSN:(NSString *)sn withError:(NSError *)err {
 	NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	if (err != nil){
 		NSLog(@"%@ %@ err %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), err);
@@ -296,7 +306,7 @@ extern id MGCopyAnswer(NSString *inKey);
         });
 		return;
 	}
-	[self _enterStage:STAGE_UPLOAD_CERT];
+	[self _enterStage:STAGE_UPLOAD_RESULT];
 }
 
 @end
