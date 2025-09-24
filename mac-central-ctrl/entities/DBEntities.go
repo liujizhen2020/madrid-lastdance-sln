@@ -10,13 +10,20 @@ type IMMeta struct {
 }
 
 type AppleId struct {
-	Email       string    `json:"Email,omitempty" bson:"Email,omitempty"`
-	Password    string    `json:"Password,omitempty" bson:"Password,omitempty"`
-	PID         string    `json:"PID,omitempty" bson:"PID,omitempty"`
-	CreateAt    time.Time `json:"-" bson:"CreateAt,omitempty"`
-	TrailerLine time.Time `json:"-" bson:"TrailerLine,omitempty"`
-	DispNum     int64     `json:"-" bson:"DispNum"`
-	Tag         string    `json:"-" bson:"Tag,omitempty"`
+	Email        string `json:"Email,omitempty" bson:"Email,omitempty"`
+	Password     string `json:"Password,omitempty" bson:"Password,omitempty"`
+	SecAPI       string `json:"SecAPI,omitempty" bson:"SecAPI,omitempty"`
+	SecType      string `json:"SecType,omitempty" bson:"SecType,omitempty"`
+	SecQuestion1 string `json:"SecQuestion1,omitempty" bson:"SecQuestion1,omitempty"`
+	SecAnswer1   string `json:"SecAnswer1,omitempty" bson:"SecAnswer1,omitempty"`
+	SecQuestion2 string `json:"SecQuestion2,omitempty" bson:"SecQuestion2,omitempty"`
+	SecAnswer2   string `json:"SecAnswer2,omitempty" bson:"SecAnswer2,omitempty"`
+	SecQuestion3 string `json:"SecQuestion3,omitempty" bson:"SecQuestion3,omitempty"`
+	SecAnswer3   string `json:"SecAnswer3,omitempty" bson:"SecAnswer3,omitempty"`
+
+	CreateAt time.Time `json:"-" bson:"CreateAt,omitempty"`
+	DispNum  int64     `json:"-" bson:"DispNum"`
+	Tag      string    `json:"-" bson:"Tag,omitempty"`
 }
 
 type AppleIdTag struct {
