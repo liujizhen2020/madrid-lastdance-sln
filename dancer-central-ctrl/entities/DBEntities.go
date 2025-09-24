@@ -1,0 +1,150 @@
+package entities
+
+import (
+	"time"
+)
+
+var (
+	SEC_TYPE_DIRECT  = "direct"
+	SEC_TYPE_APICODE = "apicode"
+	SEC_TYPE_FIXCODE = "fixcode"
+)
+
+type IMMeta struct {
+	Key   string `json:"-" bson:"Key"`
+	Value string `json:"-" bson:"Value"`
+}
+
+type Account struct {
+	Email        string    `json:"Email,omitempty" bson:"Email,omitempty"`
+	Password     string    `json:"Password,omitempty" bson:"Password,omitempty"`
+	SecAPI       string    `json:"SecAPI,omitempty" bson:"SecAPI,omitempty"`
+	SecType      string    `json:"SecType,omitempty" bson:"SecType,omitempty"`
+	SecQuestion1 string    `json:"SecQuestion1,omitempty" bson:"SecQuestion1,omitempty"`
+	SecAnswer1   string    `json:"SecAnswer1,omitempty" bson:"SecAnswer1,omitempty"`
+	SecQuestion2 string    `json:"SecQuestion2,omitempty" bson:"SecQuestion2,omitempty"`
+	SecAnswer2   string    `json:"SecAnswer2,omitempty" bson:"SecAnswer2,omitempty"`
+	SecQuestion3 string    `json:"SecQuestion3,omitempty" bson:"SecQuestion3,omitempty"`
+	SecAnswer3   string    `json:"SecAnswer3,omitempty" bson:"SecAnswer3,omitempty"`
+	CreateAt     time.Time `json:"-" bson:"CreateAt,omitempty"`
+	DispNum      int64     `json:"-" bson:"DispNum"`
+	Tag          string    `json:"-" bson:"Tag,omitempty"`
+}
+
+type AppleIdTag struct {
+	Tag              string    `json:"Tag" bson:"Tag,omitempty"`
+	DispatchInterval int64     `json:"DispatchInterval" bson:"DispatchInterval,omitempty"`
+	Num              int64     `json:"Num" bson:"Num,omitempty"`
+	BindingNum       int64     `json:"BindingNum" bson:"BindingNum"`
+	CertNum          int64     `json:"CertNum" bson:"CertNum"`
+	ReadyNum         int64     `json:"ReadyNum" bson:"ReadyNum"`
+	CreateAt         time.Time `json:"-" bson:"CreateAt,omitempty"`
+	CreateAtStr      string    `json:"CreateAtStr" bson:"CreateAtStr"`
+}
+
+type DeviceBasic struct {
+	SN       string    `json:"sn,omitempty" bson:"SN,omitempty"`
+	MLB      string    `json:"mlb,omitempty" bson:"MLB,omitempty"`
+	ROM      string    `json:"rom,omitempty" bson:"ROM,omitempty"`
+	BOARD    string    `json:"board,omitempty" bson:"BOARD,omitempty"`
+	PT       string    `json:"pt,omitempty" bson:"PT,omitempty"`
+	CreateAt time.Time `json:"-" bson:"CreateAt,omitempty"`
+}
+
+type Device struct {
+	DeviceBasic `json:"-" bson:"DeviceBasic,omitempty"`
+	Status      int64 `json:"-" bson:"Status"`
+	DispNum     int64 `json:"-" bson:"DispNum"`
+}
+
+type Certificate struct {
+	DeviceBasic `json:"-" bson:"DeviceBasic,omitempty"`
+	Status      int64     `json:"-" bson:"Status"`
+	AccountRef  string    `json:"-" bson:"AccountRef,omitempty"`
+	PasswordRef string    `json:"-" bson:"PasswordRef,omitempty"`
+	IMRegTime   time.Time `json:"-" bson:"IMRegTime,omitempty"`
+	AccountTag  string    `json:"-" bson:"AppleIdTag,omitempty"`
+	CtrlTime    time.Time `json:"-" bson:"CtrlTime,omitempty"`
+	SuccTotal   int64     `json:"-" bson:"SuccTotal,omitempty"`
+	ContiFail   int64     `json:"-" bson:"ContiFail"`
+	DispNum     int64     `json:"-" bson:"DispNum"`
+	Cert        string    `json:"-" bson:"Cert,omitempty"`
+}
+
+type Phone struct {
+	Number   string    `json:"-" bson:"Number,omitempty"`
+	DispNum  int64     `json:"-" bson:"DispNum,omitempty"`
+	CreateAt time.Time `json:"-" bson:"CreateAt,omitempty"`
+}
+
+type User struct {
+	Username string    `json:"-" bson:"Username,omitempty"`
+	Password string    `json:"-" bson:"Password,omitempty"`
+	FailNum  int64     `json:"-" bson:"FailNum,omitempty"`
+	CreateAt time.Time `json:"-" bson:"CreateAt,omitempty"`
+}
+
+type IMMacro struct {
+	MacroValue        string    `json:"MacroValue" bson:"MacroValue,omitempty"`
+	MessageIdentifier string    `json:"MessageIdentifier" bson:"MessageIdentifier,omitempty"`
+	Status            int64     `json:"Status" bson:"Status,omitempty"`
+	LowerLimit        int64     `json:"LowerLimit" bson:"LowerLimit,omitempty"`
+	UpdateAt          time.Time `json:"-" bson:"UpdateAt,omitempty"`
+}
+
+type IMessage struct {
+	Identifier      string          `json:"Identifier,omitempty" bson:"Identifier,omitempty"`
+	Status          int64           `json:"Status,omitempty" bson:"Status,omitempty"`
+	TargetNum       int64           `json:"TargetNum,omitempty" bson:"TargetNum,omitempty"`
+	SuccNum         int64           `json:"SuccNum,omitempty" bson:"SuccNum,omitempty"`
+	MacroSwitch     int64           `json:"MacroSwitch,omitempty" bson:"MacroSwitch,omitempty"`
+	Content         IMessageContent `json:"Content,omitempty" bson:"Content,omitempty"`
+	MessageInterval int64           `json:"MessageInterval,omitempty" bson:"MessageInterval,omitempty"`
+	CreateAt        time.Time       `json:"CreateAt,omitempty" bson:"CreateAt,omitempty"`
+}
+
+type IMessageContent struct {
+	Identifier string `json:"Identifier,omitempty" bson:"Identifier,omitempty"`
+	Text       string `json:"Text,omitempty" bson:"Text,omitempty"`
+}
+
+type IMSettleLog struct {
+	Month    string    `json:"-" bson:"Month"`
+	Num      int64     `json:"-" bson:"Num"`
+	CreateAt time.Time `json:"-" bson:"CreateAt"`
+}
+
+type IMCertBox struct {
+	Time string `json:"time" bson:"-"`
+	SN   string `json:"sn" bson:"-"`
+	ACC  string `json:"acc" bson:"-"`
+	Cert string `json:"cert" bson:"-"`
+}
+
+type IMSerialLog struct {
+	Serial          string    `json:"Serial" bson:"Serial"`
+	ProductType     string    `json:"ProductType" bson:"ProductType"`
+	CreateAt        time.Time `json:"-" bson:"CreateAt"`
+	BindingTimeStr  string    `json:"BindingTimeStr" bson:"BindingTimeStr"`
+	CreateAtStr     string    `json:"CreateAtStr" bson:"CreateAtStr"`
+	BindingEmail    string    `json:"BindingEmail" bson:"BindingEmail"`
+	EmailPWD        string    `json:"EmailPWD" bson:"EmailPWD"`
+	SuccTotal       int64     `json:"SuccTotal" bson:"SuccTotal"`
+	DispNum         int64     `json:"DispNum" bson:"DispNum"`
+	LastSucc        int64     `json:"LastSucc" bson:"LastSucc"`
+	BindingInterval int64     `json:"BindingInterval" bson:"BindingInterval"`
+}
+
+func (c *IMessage) IsActive() bool {
+	return c.Status == 1
+}
+
+func (c *MacCode) Basic() (DeviceBasic, error) {
+	return DeviceBasic{
+		SN:    c.SN,
+		MLB:   c.MLB,
+		ROM:   c.ROM,
+		BOARD: c.BOARD,
+		PT:    c.PT,
+	}, nil
+}
