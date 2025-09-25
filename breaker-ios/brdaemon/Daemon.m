@@ -74,6 +74,7 @@ extern id MGCopyAnswer(NSString *inKey);
 			[self _writeResetFlag];
 			[self _invalidateStageTimer];
 			[self _checkStageTimeout:TIMEOUT_STAGE_SERVER_API expectedStage:STAGE_DEVICE_INFO];
+			[self.provider fetchDevice];
 			break;
 		}
 		case STAGE_DEVICE_INFO:

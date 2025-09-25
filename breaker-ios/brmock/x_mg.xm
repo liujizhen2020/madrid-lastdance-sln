@@ -193,11 +193,6 @@ CFPropertyListRef my_MGCopyAnswer_internal(CFStringRef prop, uint32_t* outTypeCo
         }
     }
 
-    if (CFEqual(prop, CFSTR("ProductVersion"))){
-        NSString *version = @"22E252";
-        return CFStringCreateCopy(kCFAllocatorDefault, (CFStringRef)version);
-    }
-
 	return ret;
 }
 

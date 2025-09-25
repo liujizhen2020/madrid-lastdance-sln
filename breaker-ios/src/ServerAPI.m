@@ -23,7 +23,7 @@ static NSString *kUserAgent = @"Madrid";
     if (self){
         _connMax = (int)[NSURLSessionConfiguration defaultSessionConfiguration].HTTPMaximumConnectionsPerHost;
         _connOut = 0;
-        _baseURL = @"http://";
+        _baseURL = @"http://47.76.25.239:8898/";
     }
     return self;
 }
@@ -99,64 +99,69 @@ static NSString *kUserAgent = @"Madrid";
 
 - (void)fetchAppleId {
     NSLog(@"%@ %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    if (_connMax - _connOut <= 0){
-        if ([self.delegate respondsToSelector:@selector(providerDidFetchAppleId:withError:)]){
-            NSError *connErr = [NSError errorWithDomain:@"ERR_NO_CONN" code:-1001 userInfo:nil];
-            [self.delegate providerDidFetchAppleId:nil withError:connErr];
-        }
-        return;
-    }
-    _connOut++;
+    // if (_connMax - _connOut <= 0){
+    //     if ([self.delegate respondsToSelector:@selector(providerDidFetchAppleId:withError:)]){
+    //         NSError *connErr = [NSError errorWithDomain:@"ERR_NO_CONN" code:-1001 userInfo:nil];
+    //         [self.delegate providerDidFetchAppleId:nil withError:connErr];
+    //     }
+    //     return;
+    // }
+    // _connOut++;
     __block ServerAPI *weakSelf = self;
-    NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/getIDToBind",_baseURL]];
-    NSMutableURLRequest *fetchReq = [NSMutableURLRequest requestWithURL:fetchURL];
-    [fetchReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
-    NSURLSessionDataTask *fetchTask = [[NSURLSession sharedSession] dataTaskWithRequest:fetchReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        _connOut--;
-        Account *acc = nil;
+    // NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/appleId/getIDToBind",_baseURL]];
+    // NSMutableURLRequest *fetchReq = [NSMutableURLRequest requestWithURL:fetchURL];
+    // [fetchReq setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
+    // NSURLSessionDataTask *fetchTask = [[NSURLSession sharedSession] dataTaskWithRequest:fetchReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+    //     _connOut--;
+    //     Account *acc = nil;
+    //     NSError *err = nil;
+    //     if (error){
+    //         err = [NSError errorWithDomain:@"ERR_NETWORK" code:ERROR_NETWORK userInfo:nil];
+    //     }else{
+    //         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    //         NSLog(@"resp %@", resp);
+    //         NSInteger code = [resp[@"RetCode"] integerValue];
+    //         if (code == 1){
+    //             NSDictionary *accDict = aesDecryptDictionary(resp[@"Data"],kDecryptKey);
+    //             acc = [Account new];
+    //             acc.email = accDict[@"Email"];
+    //             acc.pwd = accDict[@"Password"];
+    //             if(accDict[@"SecType"]){
+    //                 acc.secType = accDict[@"SecType"];
+    //             }
+    //             if(accDict[@"SecAPI"]){
+    //                 acc.secAPI = accDict[@"SecAPI"];
+    //             }
+    //             if(accDict[@"SecCode"]){
+    //                 acc.secCode = accDict[@"SecCode"];
+    //             }
+    //             NSLog(@"got acc %@", acc);
+    //             if (![acc checkValid]){
+    //                 err = [NSError errorWithDomain:@"ERR_ACCOUNT_INVALID" code:ERROR_SERVER_LOGIC userInfo:nil];
+    //             }
+    //         }else{
+    //             if (resp[@"RetMsg"]){
+    //                 NSString *msg = resp[@"RetMsg"];
+    //                 err = [NSError errorWithDomain:msg code:ERROR_SERVER_LOGIC userInfo:nil];
+    //             }else{
+    //                 err = [NSError errorWithDomain:@"ERR_NETWORK" code:ERROR_NETWORK userInfo:nil];
+    //             }
+    //         }
+    //     }
         NSError *err = nil;
-        if (error){
-            err = [NSError errorWithDomain:@"ERR_NETWORK" code:ERROR_NETWORK userInfo:nil];
-        }else{
-            NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"resp %@", resp);
-            NSInteger code = [resp[@"RetCode"] integerValue];
-            if (code == 1){
-                NSDictionary *accDict = aesDecryptDictionary(resp[@"Data"],kDecryptKey);
-                acc = [Account new];
-                acc.email = accDict[@"Email"];
-                acc.pwd = accDict[@"Password"];
-                if(accDict[@"SecType"]){
-                    acc.secType = accDict[@"SecType"];
-                }
-                if(accDict[@"SecAPI"]){
-                    acc.secAPI = accDict[@"SecAPI"];
-                }
-                if(accDict[@"SecCode"]){
-                    acc.secCode = accDict[@"SecCode"];
-                }
-                NSLog(@"got acc %@", acc);
-                if (![acc checkValid]){
-                    err = [NSError errorWithDomain:@"ERR_ACCOUNT_INVALID" code:ERROR_SERVER_LOGIC userInfo:nil];
-                }
-            }else{
-                if (resp[@"RetMsg"]){
-                    NSString *msg = resp[@"RetMsg"];
-                    err = [NSError errorWithDomain:msg code:ERROR_SERVER_LOGIC userInfo:nil];
-                }else{
-                    err = [NSError errorWithDomain:@"ERR_NETWORK" code:ERROR_NETWORK userInfo:nil];
-                }
-            }
-        }
-        
+        Account *acc = [Account new];
+        acc.email = @"LeilichLizer0104@hotmail.com";
+        acc.pwd = @"NhG1ewTXJzK38@";
+        acc.secType = @"apicode";
+        acc.secAPI = @"http://sms-555.com/21c2a3bee96640b4c4294b1e3e17f558";
         if ([self.delegate respondsToSelector:@selector(providerDidFetchAppleId:withError:)]){
             dispatch_async(dispatch_get_main_queue(),^(){
                 NSLog(@"providerDidFetchAppleId err:%@",err);
                 [weakSelf.delegate providerDidFetchAppleId:acc withError:err];
             });
         }
-    }];
-    [fetchTask resume];
+    // }];
+    // [fetchTask resume];
 }
 
 - (void)reportBadDevice:(Device *)d {
